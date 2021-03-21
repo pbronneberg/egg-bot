@@ -32,6 +32,14 @@ jobs:
             - name: Servo
             - name: Stepper
               version: 1.1.3
-          sketch-paths: [./src/ejjduino_m0]
+          sketch-paths: { "./src/ejjduino_m0" }
+          enable-deltas-report: true
+          enable-warnings-report: true
+
+      - if: github.event_name == 'pull_request'
+        uses: actions/upload-artifact@v1
+        with:
+          name: size-deltas-reports
+          path: size-delta-reports
 
 
