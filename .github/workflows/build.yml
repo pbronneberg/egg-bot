@@ -35,7 +35,7 @@ jobs:
           - arduino-platform: "arduino:samd"
             fqbn: "arduino:samd:arduino_zero_native"
           - arduino-platform: "arduino:avr"
-            fqbn: "arduino:avr:uno"
+            fqbn: "arduino:avr:leonardo"
 
     # The type of runner that the job will run on
     runs-on: [self-hosted, private]
