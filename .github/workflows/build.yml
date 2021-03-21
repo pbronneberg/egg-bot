@@ -32,7 +32,7 @@ jobs:
             - name: Servo
             - name: Stepper
               version: 1.1.3
-          sketch-paths: 
+          sketch-paths: |
             - "./src/ejjduino_m0"
           enable-deltas-report: true
           enable-warnings-report: true
