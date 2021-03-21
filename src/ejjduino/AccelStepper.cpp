@@ -13,10 +13,10 @@ void dump(uint8_t* p, int l)
 
     for (i = 0; i < l; i++)
     {
-	SerialUSB.print(p[i], HEX);
-	SerialUSB.print(" ");
+	Serial.print(p[i], HEX);
+	Serial.print(" ");
     }
-    SerialUSB.println("");
+    Serial.println("");
 }
 #endif
 
@@ -165,15 +165,15 @@ void AccelStepper::computeNewSpeed()
 	_speed = -_speed;
 
 #if 0
-    SerialUSB.println(_speed);
-    SerialUSB.println(_acceleration);
-    SerialUSB.println(_cn);
-    SerialUSB.println(_c0);
-    SerialUSB.println(_n);
-    SerialUSB.println(_stepInterval);
-    SerialUSB.println(distanceTo);
-    SerialUSB.println(stepsToStop);
-    SerialUSB.println("-----");
+    Serial.println(_speed);
+    Serial.println(_acceleration);
+    Serial.println(_cn);
+    Serial.println(_c0);
+    Serial.println(_n);
+    Serial.println(_stepInterval);
+    Serial.println(distanceTo);
+    Serial.println(stepsToStop);
+    Serial.println("-----");
 #endif
 }
 
