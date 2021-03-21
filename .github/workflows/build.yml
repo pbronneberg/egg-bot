@@ -34,8 +34,8 @@ jobs:
           # variable `fqbn` is set to "arduino:samd:nano_33_iot".
           - arduino-platform: "arduino:samd"
             fqbn: "arduino:samd:arduino_zero_native"
-          - arduino-platform: "arduino:avr"
-            fqbn: "arduino:avr:uno"
+          # - arduino-platform: "arduino:avr"
+          #   fqbn: "arduino:avr:uno"
 
     # The type of runner that the job will run on
     runs-on: [self-hosted, private]
