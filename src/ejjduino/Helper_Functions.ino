@@ -31,11 +31,11 @@ inline void storePenDownPosInEE() {
 }
 
 inline void sendAck(){
-	SerialUSB.print("OK\r\n");
+	Serial.print("OK\r\n");
 }
 
 inline void sendError(){
-	SerialUSB.print("unknown CMD\r\n");
+	Serial.print("unknown CMD\r\n");
 }
 
 void motorsOff() {

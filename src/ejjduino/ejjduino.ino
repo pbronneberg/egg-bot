@@ -87,10 +87,10 @@ float penSpeed=0; // these are local variables for Function SteppermotorMove-Com
 boolean motorsEnabled = 0;
 
 void setup() {   
-	SerialUSB.begin(9600);
+	Serial.begin(9600);
 	makeComInterface();
 	initHardware();
-  SerialUSB.print ("hi");
+  Serial.print ("hi");
 }
 
 void loop() {

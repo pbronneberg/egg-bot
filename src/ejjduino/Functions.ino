@@ -25,18 +25,18 @@ void queryPen() {
 		state='1';
 	else
 		state='0';
-	SerialUSB.print(String(state)+"\r\n");
+	Serial.print(String(state)+"\r\n");
 	sendAck();
 }
 
 void queryButton() {
-	SerialUSB.print(String(prgButtonState) +"\r\n");
+	Serial.print(String(prgButtonState) +"\r\n");
 	sendAck();
 	prgButtonState = 0;
 }
 
 void queryLayer() {
-	SerialUSB.print(String(layer) +"\r\n");
+	Serial.print(String(layer) +"\r\n");
 	sendAck();
 } 
 
@@ -54,7 +54,7 @@ void setLayer() {
 }
 
 void queryNodeCount() {
-	SerialUSB.print(String(nodeCount) +"\r\n");
+	Serial.print(String(nodeCount) +"\r\n");
 	sendAck();
 
 }
@@ -140,7 +140,7 @@ void setPen(){
 		sendAck();
 		delay(500);
 	}
-	//	SerialUSB.println("delay");
+	//	Serial.println("delay");
 	if (val==NULL && arg ==NULL)
 		sendError();
 }  
@@ -251,8 +251,8 @@ void stepperModeConfigure(){
 }
 
 void sendVersion(){
-	SerialUSB.print(initSting);
-	SerialUSB.print("\r\n");
+	Serial.print(initSting);
+	Serial.print("\r\n");
 }
 
 void unrecognized(const char *command){
