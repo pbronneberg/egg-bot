@@ -13,6 +13,28 @@ on:
   # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
 
+  test-matrix:
+    # Here we tell GitHub that the jobs must be determined
+    # dynamically depending on a matrix configuration.
+    strategy:
+      matrix:
+        # The matrix will produce one job for each configuration
+        # parameter of type `arduino-platform`, in this case a
+        # total of 2.
+        arduino-platform: ["arduino:samd", "arduino:avr"]
+        # This is usually optional but we need to statically define the
+        # FQBN of the boards we want to test for each platform. In the
+        # future the CLI might automatically detect and download the core
+        # needed to compile against a certain FQBN, at that point the
+        # following `include` section will be useless.
+        include:
+          # This works like this: when the platformn is "arduino:samd", the
+          # variable `fqbn` is set to "arduino:samd:nano_33_iot".
+          - arduino-platform: "arduino:samd"
+            fqbn: "arduino:samd:arduino_zero_native"
+          - arduino-platform: "arduino:avr"
+            fqbn: "arduino:avr:uno"
+
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
   # This workflow contains a single job called "build"
@@ -25,23 +47,20 @@ jobs:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v2
 
-      - uses: arduino/actions/libraries/compile-examples@master
+      # We use the `arduino/setup-arduino-cli` action to install and
+      # configure the Arduino CLI on the system.
+      - name: Setup Arduino CLI
+        uses: arduino/setup-arduino-cli@v1.1.1
         with:
-          fqbn: 'arduino:avr:uno'
-          libraries: |
-            - name: Servo
-            - name: Stepper
-              version: 1.1.3
-          sketch-paths: |
-            - "./src/ejjduino_m0"
-          # enable-deltas-report: true
-          # enable-warnings-report: true
-          github-token: ${{ secrets.GITHUB_TOKEN }}
+          # version: "0.5.x"
 
-      - if: github.event_name == 'pull_request'
-        uses: actions/upload-artifact@v1
-        with:
-          name: size-deltas-reports
-          path: size-delta-reports
-
-
+      # We then install the platform, which one will be determined
+      # dynamically by the build matrix.
+      - name: Install platform
+        run: |
+          arduino-cli core update-index
+          arduino-cli core install ${{ matrix.arduino-platform }}
+      # Finally, we compile the sketch, using the FQBN that was set
+      # in the build matrix.
+      - name: Compile EJJDuino
+        run: arduino-cli compile --fqbn ${{ matrix.fqbn }} ./src/ejjduino_m0
