@@ -60,4 +60,4 @@ jobs:
       # Finally, we compile the sketch, using the FQBN that was set
       # in the build matrix.
       - name: Compile EJJDuino
-        run: arduino-cli compile --fqbn ${{ matrix.fqbn }} ./src/ejjduino_m0
+        run: arduino-cli compile --fqbn ${{ matrix.fqbn }} ./src/ejjduino
