@@ -36,6 +36,7 @@ jobs:
             - "./src/ejjduino_m0"
           enable-deltas-report: true
           enable-warnings-report: true
+          github-token: ${{ secrets.GITHUB_TOKEN }}
 
       - if: github.event_name == 'pull_request'
         uses: actions/upload-artifact@v1
