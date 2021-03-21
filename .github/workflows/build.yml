@@ -13,7 +13,8 @@ on:
   # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
 
-  test-matrix:
+jobs:
+  build:
     # Here we tell GitHub that the jobs must be determined
     # dynamically depending on a matrix configuration.
     strategy:
@@ -35,10 +36,6 @@ on:
           - arduino-platform: "arduino:avr"
             fqbn: "arduino:avr:uno"
 
-# A workflow run is made up of one or more jobs that can run sequentially or in parallel
-jobs:
-  # This workflow contains a single job called "build"
-  build:
     # The type of runner that the job will run on
     runs-on: [self-hosted, private]
 
