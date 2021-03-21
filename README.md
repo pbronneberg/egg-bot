@@ -15,11 +15,14 @@ Electronics:
 * CNC board
 * RAMPS 1.4
 * DRV8825 drivers
+* A4988 drivers
+* some 12v psu
 
 Hardware in parts bin:
 * 5mm threaded rod
 * NEMA17 motors
 * SG90
+* Skate bearings
 
 ## Sources
 
