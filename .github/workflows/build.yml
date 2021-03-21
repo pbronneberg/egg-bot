@@ -48,7 +48,7 @@ jobs:
       # configure the Arduino CLI on the system.
       - name: Setup Arduino CLI
         uses: arduino/setup-arduino-cli@v1.1.1
-        with:
+        # with:
           # version: "0.5.x"
 
       # We then install the platform, which one will be determined
