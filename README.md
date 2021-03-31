@@ -11,11 +11,10 @@ paginate: true
 
 # Egg-bot
 
-![bg opacity](https://yhatt-marp-cli-example.netlify.com/assets/gradient.jpg)
 
 ---
-<!-- _class:  -->
-# My personal egg-painting robot
+<!-- _class: lead -->
+## My personal egg-painting robot
 
 ![bg opacity](./assets/egg-bot.jpg)
 
@@ -103,3 +102,8 @@ Arduino leonardo + CNC board based. Base is slimmed down, reducing printing time
 
 * [Thingiverse](https://www.thingiverse.com/thing:2553011)
 
+---
+<!-- _class: lead -->
+<!-- _paginate: false -->
+
+# <!-- fit --> 🥚🤖
