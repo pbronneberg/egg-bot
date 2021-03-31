@@ -11,7 +11,6 @@ paginate: true
 
 # Egg-bot
 
-Presentation: https://pbronneberg.github.io/egg-bot/
 
 ---
 <!-- _class: lead -->
@@ -20,6 +19,9 @@ Presentation: https://pbronneberg.github.io/egg-bot/
 ![bg opacity](./assets/egg-bot.jpg)
 
 [![Youtube](https://img.shields.io/badge/watch_me_on-youtube-red)](https://youtu.be/n5YkXWuXV7Y)
+[![Checks](https://img.shields.io/github/checks-status/pbronneberg/egg-bot/main?label=Egg-bot%20on%20github&logo=github)](https://github.com/pbronneberg/egg-bot)
+[![Build](https://img.shields.io/github/workflow/status/pbronneberg/egg-bot/CI/main&logo=github)](https://github.com/pbronneberg/egg-bot/actions/workflows/build.yml)
+[![Website](https://img.shields.io/website?url=https%3A%2F%2Fpbronneberg.github.io%2Fegg-bot%2F)](https://pbronneberg.github.io/egg-bot/)
 
 ---
 
