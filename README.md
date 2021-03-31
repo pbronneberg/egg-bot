@@ -11,6 +11,7 @@ paginate: true
 
 # Egg-bot
 
+Presentation: https://pbronneberg.github.io/egg-bot/
 
 ---
 <!-- _class: lead -->
